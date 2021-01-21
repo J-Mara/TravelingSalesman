@@ -1,2 +1,2 @@
 # TravelingSalesman
-Names: Jordan Maragakis, Jun Qiao Zhong, Jasmine Wang, Jonathan Ho, Jesse Xie
+ jordan.maragakis jun.qiao.zhong jasmine.wang Jonathan.Ho jesse.xie 
