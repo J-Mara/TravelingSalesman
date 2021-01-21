@@ -62,7 +62,10 @@ public class TestAlgorithm {
       for (int i = 0; i<table[0].length-1; i++) {
         table[0][i+1] = tempTable[0][i];
       }
-      table[1][2] = tempTable[1][0];
+      if (cities.size()>2) {
+        table[1][2] = tempTable[1][0];
+
+      }
       while (data.hasNextLine()) {
         String lineStr = data.nextLine();
         Scanner line = new Scanner(lineStr);
