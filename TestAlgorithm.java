@@ -1,24 +1,30 @@
 import java.util.*;
 
-public class testAlgorithm {
+public class TestAlgorithm {
     public static void main(String[] args) {
 
-      // Scanner data = new Scanner(System.in);
-      // int[][] table = genTable(data);
+      Scanner data = new Scanner(System.in);
+      int[][] table = genTable(data);
+      for (int i = 0; i < table.length; i++) {
+        for (int j = 0; j < table.length; j++) {
+          if (table[i][j] == 0) {
+            table[i][j] = table[j][i];
+          }
+        }
+      }
       // System.out.println(Arrays.deepToString(table));
-      // System.out.println("By row");
-      // for (int[] n : table) {
-      //   System.out.println(Arrays.toString(n));
-      // }
+      System.out.println("By row");
+      for (int[] n : table) {
+        System.out.println(Arrays.toString(n));
+      }
 
       //Algorithm testing
 
       System.out.println(fact(5));
 
-      ArrayList<String> cities = new ArrayList<String>(4);
-      cities.add("0"); cities.add("1"); cities.add("2"); cities.add("3");
-      String[] path = numberToPath(16, cities);
+      int[] path = numberToPath(16, 4);
       System.out.println(Arrays.toString(path));
+      System.out.println(shortestDistance(table));
     }
 
     public static int[][] genTable(Scanner data) {
@@ -94,10 +100,14 @@ public class testAlgorithm {
     (i.e. 01234, 01243, 43210, etc.), then permutations are listed in ascending order
     */
 
-    public static String[] numberToPath(int number, ArrayList<String> cities) {
-      int numberOfCities = cities.size();
+    public static int[] numberToPath(int number, int numberOfCities) {
+      ArrayList<Integer> cities = new ArrayList<Integer>(numberOfCities);
+      
+      for (int i = 0; i < numberOfCities; i++) {
+        cities.add(i);
+      }
 
-      String[] path = new String[numberOfCities];
+      int[] path = new int[numberOfCities];
 
       int base = fact(numberOfCities-1);
       int factorialBase = numberOfCities-1;
@@ -116,5 +126,23 @@ public class testAlgorithm {
         }
       }
       return path;
+    }
+    public static int shortestDistance(int[][] table) {
+      int numberOfCities = table.length;
+
+      int minDist = Integer.MAX_VALUE;
+      for (int i = 0; i < fact(numberOfCities); i++) {
+        int currentDist = 0;
+        int[] path = numberToPath(i, numberOfCities);
+        for (int j = 0; j < numberOfCities-1; j++) {
+          int currentCityIndex = path[j];
+          int nextCityIndex = path[j+1];
+          currentDist += table[currentCityIndex][nextCityIndex];
+        }
+        if (currentDist < minDist) {
+          minDist = currentDist;
+        }
+      }
+      return minDist;
     }
 }
