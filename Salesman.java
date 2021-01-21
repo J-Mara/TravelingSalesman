@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 import java.util.* ;
 public class Salesman {
     public static void main(String[] args) {
 
-=======
-import java.util.*;
-
-public class Salesman {
-    public static void main(String[] args) {
-      
->>>>>>> 7b65c9d200e976e9311ef46f5bd86147700b1fd0
       Scanner data = new Scanner(System.in);
       int[][] table = genTable(data);
       System.out.println(Arrays.deepToString(table));
@@ -17,11 +9,10 @@ public class Salesman {
       for (int[] n : table) {
         System.out.println(Arrays.toString(n));
       }
-<<<<<<< HEAD
 
-      
+
       // path generation
-      int numPaths = 12000 ; //as the number increases, it is more likely to be correct
+      int numPaths = 20000 ; //as the number increases, it is more likely to be correct
       int[][] pathsList = pathGeneration(numPaths,table[1].length) ;
 
       // remove for list of paths (you may want to decrease the number above)
@@ -37,10 +28,6 @@ public class Salesman {
       System.out.println(pathLength(table,pathsList)) ;
     }
 
-=======
-    }
-  
->>>>>>> 7b65c9d200e976e9311ef46f5bd86147700b1fd0
     public static int[][] genTable(Scanner data) {
       ArrayList<String> cities = new ArrayList<String>();
       int[][] tempTable = new int[2][10];
@@ -89,17 +76,12 @@ public class Salesman {
         int startIndex = cities.indexOf(startCity);
         int endIndex = cities.indexOf(endCity);
         //System.out.print(startCity + ", " + endCity + ", ");
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 7b65c9d200e976e9311ef46f5bd86147700b1fd0
         //System.out.println(startIndex + ", " + endIndex);
         table[startIndex][endIndex] = num;
       }
       return table;
     }
-<<<<<<< HEAD
 
     public static int[][] pathGeneration(int amount, int length) {
       ArrayList<Integer> nums = new ArrayList<Integer>() ;
@@ -128,6 +110,4 @@ public class Salesman {
       return returnValue ;
     } // with the given data table and the list of paths, get the length of the shortest path in the list provided
 
-=======
->>>>>>> 7b65c9d200e976e9311ef46f5bd86147700b1fd0
 }
