@@ -5,7 +5,7 @@ public class initial {
       
       Scanner data = new Scanner(System.in);
       int[][] table = genTable(data);
-      System.out.println(Arrays.deepToString(table));
+      //System.out.println(Arrays.deepToString(table));
       System.out.println("By row");
       for (int[] n : table) {
         System.out.println(Arrays.toString(n));
@@ -14,10 +14,10 @@ public class initial {
         System.out.println(factorial(Integer.parseInt(args[0])));
       }
       System.out.println("\n");
-      int n = 8;
-      String[] paths = makePaths(5);
+      // int n = 8;
+      // String[] paths = makePaths(5);
       //System.out.println(Arrays.toString(paths));
-      System.out.println(paths.length);
+      //System.out.println(paths.length);
       int[] lengths = allLengths(table);
       System.out.println(min(lengths));
     }
