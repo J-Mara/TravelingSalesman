@@ -13,17 +13,17 @@ public class TestAlgorithm {
         }
       }
       // System.out.println(Arrays.deepToString(table));
-      System.out.println("By row");
-      for (int[] n : table) {
-        System.out.println(Arrays.toString(n));
-      }
+      // System.out.println("By row");
+      // for (int[] n : table) {
+      //   System.out.println(Arrays.toString(n));
+      // }
 
       //Algorithm testing
 
-      System.out.println(fact(5));
+      // System.out.println(fact(5));
 
-      int[] path = numberToPath(16, 4);
-      System.out.println(Arrays.toString(path));
+      // int[] path = numberToPath(16, 4);
+      // System.out.println(Arrays.toString(path));
       System.out.println(shortestDistance(table));
     }
 
@@ -55,7 +55,6 @@ public class TestAlgorithm {
           }
         }
       }
-      System.out.println(cities.toString());
 
       int l = cities.size();
 
